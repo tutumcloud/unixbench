@@ -10,4 +10,5 @@ ADD http://byte-unixbench.googlecode.com/files/UnixBench5.1.3.tgz /tmp/UnixBench
 RUN tar -xzvf /tmp/UnixBench5.1.3.tgz -C /tmp
 
 # Run UnixBench
-ENTRYPOINT cd /tmp/UnixBench && ./Run
+WORKDIR /tmp/UnixBench
+ENTRYPOINT ["./Run"]
