@@ -11,4 +11,4 @@ RUN tar -xzvf /tmp/UnixBench5.1.3.tgz -C /tmp
 
 # Run UnixBench
 WORKDIR /tmp/UnixBench
-CMD ["./Run"]
+ENTRYPOINT ["./Run"]
