@@ -8,7 +8,7 @@ Repository available here: https://code.google.com/p/byte-unixbench/
 Build
 -----
 
-To create the image `tutum/unixbench`, execute the following command on the tutum-docker-unixbench folder:
+To create the image `tutum/unixbench`, execute the following command inside the `tutum-docker-unixbench` folder:
 
 	sudo docker build -t tutum/unixbench -rm -no-cache .
 
