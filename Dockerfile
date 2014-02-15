@@ -6,7 +6,11 @@ RUN apt-get update && apt-get install -y build-essential libx11-dev libgl1-mesa-
 
 # Download UnixBench
 ADD http://byte-unixbench.googlecode.com/files/UnixBench5.1.3.tgz /tmp/UnixBench5.1.3.tgz
-RUN tar -xzvf /tmp/UnixBench5.1.3.tgz -C /tmp
+
+# Removing this RUN command due to incompatibility with Docker 0.8 
+# If <src> is a local tar archive in a recognized compression format (identity, gzip, bzip2 or xz) 
+# then it is unpacked as a directory. Resources from remote URLs are not decompressed <-- NOT TRUE --> 
+# RUN tar -xzvf /tmp/UnixBench5.1.3.tgz -C /tmp
 
 # Run UnixBench
 WORKDIR /tmp/UnixBench
