@@ -13,5 +13,7 @@ ADD http://byte-unixbench.googlecode.com/files/UnixBench5.1.3.tgz /tmp/UnixBench
 # RUN tar -xzvf /tmp/UnixBench5.1.3.tgz -C /tmp
 
 # Run UnixBench
-WORKDIR /tmp/UnixBench
+# WORKDIR /tmp/UnixBench <-- Changed due to Docker 0.8 bug
+
+WORKDIR /tmp/UnixBench5.1.3.tgz/UnixBench
 ENTRYPOINT ["./Run"]
